@@ -55,7 +55,7 @@ async function run() {
         })
         app.delete('/completedtask/:id', async (req, res) => {
             const id = req.params.id;
-            const filter = { _id: ObjectId(id) };
+            const filter = { _id: id };
             const result = await completedTashCollection.deleteOne(filter);
             res.send(result)
         })
